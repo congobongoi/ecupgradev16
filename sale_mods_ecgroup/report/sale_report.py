@@ -19,6 +19,7 @@ class ResPartner(models.Model):
     reseller_id = fields.Char(
         'Reseller ID'
         )
+    x_studio_reseller_id = fields.Char('Reseller ID')
     
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -82,6 +83,9 @@ class SaleOrder(models.Model):
         compute="_compute_bal_due",
         store = True,
         )
+    
+    x_studio_approximate_lead_time = fields.Float('Approximate Lead Time')
+    x_taxed_order = fields.Boolean('Taxed Order')
               
     @api.onchange('team_id')
     def _onchange_sales_team(self):
