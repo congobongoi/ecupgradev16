@@ -2,15 +2,14 @@
 <odoo>
 
     <!-- Sale Team Mods Form -->		
-    <!-- 
-    Note : Need to fix this in v16
-    
     <record id="opensales_salesreps_form_mod" model="ir.ui.view">
         <field name="name">salesreps.mods</field>
         <field name="model">crm.team</field>
         <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[@name='members']" position="after">
+            <!-- <xpath expr="//notebook/page[@name='members']" position="after"> -->
+            <!-- <xpath expr="//field[@name='member_ids']/.." position="after"> -->
+            <xpath expr="//notebook" position="inside">
 			  <page name="sales_reps" string="Sales Reps" >
 			    <field name="sales_rep_ids" widget="many2many" options="{'not_delete': True}">
 					<kanban quick_create="false" create="true" delete="true">
@@ -33,7 +32,7 @@
 		      </page>
 			</xpath>
         </field>
-    </record> -->
+    </record>
     <record id="view_res_partner_key_account" model="ir.ui.view">
         <field name="name">view.partner.key.account</field>
         <field name="model">res.partner</field>
